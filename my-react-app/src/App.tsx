@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import UserList from "./pages/UserList";
 import { useContext } from "react";
 import { ThemeContext } from "./ThemeContext";
+import RegisterForm from "./pages/RegisterForm";
 
 function App() {
     // เปิดก๊อกน้ำ! (ต้องเช็คด้วยว่ามีน้ำไหม)
@@ -42,6 +43,7 @@ function App() {
                         {/* ⚠️ สำคัญ: ใช้ Link แทน <a> เพื่อไม่ให้หน้าเว็บ Refresh */}
                         <Link to="/">🏠 Home</Link>
                         <Link to="/users">👥 User List</Link>
+                        <Link to="/register">📝 Register</Link>
                         <button onClick={toggleTheme}>
                             Switch to {theme === "light" ? "Dark" : "Light"}{" "}
                             Mode
@@ -57,6 +59,9 @@ function App() {
 
                         {/* path="/users" คือหน้า UserList */}
                         <Route path="/users" element={<UserList />} />
+
+                        {/* path="/users" คือหน้า UserList */}
+                        <Route path="/register" element={<RegisterForm />} />
 
                         {/* แถม: ดัก 404 Not Found (เผื่อพิมพ์มั่ว) */}
                         <Route
